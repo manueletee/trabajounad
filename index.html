@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Facturacion e inventario</title>
+
+  <link rel="stylesheet" href="reset.css">
+  
+    <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
+ 
+
+ 
+</head>
+<style>
+
+
+#footer {
+   
+ 
+   height: 100px; /* Altura del footer */
+
+   background-color:black;
+}
+label.positive{
+    color: green;
+}
+
+#vanis{
+ 
+}
+
+ul{
+    color: #555
+}
+
+ul li{
+    list-style: none;
+}
+
+
+label.negative{
+    color: #953131;
+}
+</style> 
+
+<body id="bodies">
+
+<div class="contenedor">
+
+
+   
+   
+
+	
+	
+	
+	
+	
+	
+	 <div class="container">
+        <div class="row">
+		
+		
+		 <div id="formulario">
+      
+                <form method="POST" action="return false" onsubmit="return false"
+				
+				
+				
+                    <div class="panel-group" id="steps">
+                        <!-- Step 1 -->
+                  
+				  
+				  
+				  
+				  
+  <div class="wrap">
+		<div class="avatar">
+      <img src="img.jpg">
+		</div>
+		<input type="text" placeholder="Nombre de Usuario" name="user" id="user" required>
+		<div class="bar">
+			<i></i>
+		</div>
+		<input type="password" placeholder="contraseña" name="pass" id="pass" required>
+		<a href="fpass.php" class="forgot_link">olvido ?</a>
+	
+	     	        <button  onclick="Validar(document.getElementById('user').value, document.getElementById('pass').value);"  class="btn btn-success" style="width:100%" >ENTRAR</button></p>
+                   
+	</div>
+				  
+                      
+
+                        <!-- Step 2 -->
+                       
+
+                        <!-- Step 3 -->
+                   
+                </form>
+            </div>
+        </div>
+		
+		
+		
+		
+		
+		<div id="resultado" class="alert alert-danger" style="display:none;"></div>
+    </div>
+</div></BR>
+		
+		
+		
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<center><h1>NO TIENES CUENTA CREA UNA</H1></CENTER>
+
+
+
+
+ 
+
+
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+      
+
+       
+
+   
+  
+   
+
+<!-- Next line for Pinterest -->
+<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+<script>
+$(document).ready(function(){
+    $("input").keyup(function(){
+        var thiss = $(this);
+        var value = thiss.val(); 
+        $.get("vistas/check.php",{value:value},function(data){
+            thiss.parent('#nav').siblings('#nav').html(data);
+        });
+    });
+});
+
+
+
+
+
+
+
+
+
+
+</script>
+    
+ 
+  
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // Generate a simple captcha
+    function randomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    };
+    $('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));
+
+    $('#defaultForm').formValidation({
+		
+		
+		
+		
+		
+           
+			
+			
+		
+		
+		
+		
+		
+		
+        message: 'Este Valor no es Valido',
+        icon: {
+          
+        },
+        fields: {
+			
+			
+			
+			
+			 celular: {
+                        message: 'el numero de celular no es valido',
+                        validators: {
+                            notEmpty: {
+                                message: 'el numero de celular es obligatorio'
+                            },
+							
+							
+							
+					
+					 stringLength: {
+                        min: 5,
+                        max: 50,
+                        message: 'el celular  debe tener como minimo 5 numeros y  un maximo de 50 numeros'
+                    },
+                            digits: {
+                                message: 'solo puede dijitar numeros'
+                            }
+							
+                        }
+                    },
+			
+                    phone: {
+                        message: 'el numero de telefono no es valido',
+                        validators: {
+                            notEmpty: {
+                                message: 'el numero de telefono es obligatorio'
+                            },
+							
+							
+							
+					
+					 stringLength: {
+                        min: 5,
+                        max: 50,
+                        message: 'el telefono  debe tener como minimo 5 numeros y  un maximo de 50 numeros'
+                    },
+					
+                            digits: {
+                                message: 'solo puede dijitar numeros'
+                            }
+                        }
+                    },
+            direccion: {
+                
+                validators: {
+                    notEmpty: {
+                        message: 'la direccion es requeridad'
+                    },
+					
+					 stringLength: {
+                        min: 6,
+                        max: 50,
+                        message: 'la direccion debe tener como minimo 6 letras y hasta un maximo de 50 letras'
+                    }
+					
+					
+					
+					
+					
+                }
+            },
+            nomfactura: {
+                
+                validators: {
+                    notEmpty: {
+                        message: 'El Nombre Del Negocio Es Requerido'
+                    }
+					
+					
+					,
+                    stringLength: {
+                        min: 6,
+                        max: 50,
+                        message: 'el titulo de factura debe tener como minimo 6 letras hasta un maximo de 50 letras'
+                    }
+                    
+					
+					
+					
+					
+					
+					
+					
+					
+					
+                }
+            },
+            username: {
+                message: 'el nombre de usuario no es valido',
+                validators: {
+                    notEmpty: {
+                        message: 'el nombre de usuario es obligatorio'
+                    },
+                    stringLength: {
+                        min: 6,
+                        max: 20,
+                        message: 'el mombre de usuario debe tener como minimo 6 letras hasta un maximo de 20 letras'
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z0-9_\.]+$/,
+						
+                        message: 'solo puede dijitar letras y numeros el resto de caracteres es prohibido'
+                    },
+					
+					
+					
+					
+					regexp: {
+                        regexp: /^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/,
+						
+                        message: 'debe tener por lo menos 1 unumero y una letra'
+                    }
+					
+					
+                }
+            },
+		
+            email: {
+                validators: {
+                    notEmpty: {
+                        message: 'el correo es requerido'
+                    },
+							
+							
+							
+					
+					 stringLength: {
+                        min: 5,
+                        max: 50,
+                        message: 'el correo  debe tener como minimo 5 caracteres y  un maximo de 50 caracteres'
+                    },
+                    emailAddress: {
+                        message: 'esto no es un correo'
+                    }
+                }
+            },
+            password: {
+                validators: {
+                    notEmpty: {
+                        message: 'la contraseña es requerida'
+                    },
+					
+					
+					 stringLength: {
+                        min: 6,
+                        max: 20,
+                        message: 'la  contraseña debe tener como minimo 6 letras o numeros y hasta un maximo de 20 letras o numeros '
+                    },
+					 regexp: {
+                        regexp: /^[a-zA-Z0-9_\.]+$/,
+                        message: 'la contraseña solo puede ser numeros o letras '
+                    },
+					
+					
+					
+					
+					
+					
+                    different: {
+                        field: 'username',
+                        message: 'The password cannot be the same as username'
+                    }
+                }
+            },
+            gender: {
+                validators: {
+                    notEmpty: {
+                        message: 'The gender is required'
+                    }
+                }
+            },
+            captcha: {
+                validators: {
+                    callback: {
+                        message: 'respuesta equibocada',
+                        callback: function(value, validator, $field) {
+                            var items = $('#captchaOperation').html().split(' '), sum = parseInt(items[0]) + parseInt(items[2]);
+                            return value == sum;
+                        }
+                    }
+                }
+            },
+            agree: {
+                validators: {
+                    notEmpty: {
+                        message: 'debes aceptar los terminos y las condiciones '
+                    }
+                }
+            }
+        }
+    });
+});
+
+
+
+
+
+$(document).ready(function(){
+    $("input").keyup(function(){
+        var thiss = $(this);
+        var value = thiss.val(); 
+        $.get("vistas/check.php",{value:value},function(data){
+            thiss.parent('li').siblings('li').html(data);
+        });
+    });
+});
+
+
+
+
+   
+		
+		
+		
+		
+		
+		
+		function Validar(user, pass)
+        {
+            $.ajax({
+                url: "vistas/validar.php",
+                type: "POST",
+                data: "user="+user+"&pass="+pass,
+                success: function(resp){
+                    $('#resultado').html(resp).show(200).delay(2500).hide(200);
+                }        
+            });
+        }
+		
+
+
+	$(document).keydown(function(objEvent) {
+    if (objEvent.keyCode == 9) {  //tab pressed
+        objEvent.preventDefault(); // stops its action
+    }
+})	
+		
+
+
+
+	
+		
+</script>
+
+<section style="width:100%;height:100px;">
+</section>
+<div id="footer">
+<center><p style="color: #FFFFFF">Contactanos  correo: javasoftcolombia@gmail.com </p> </center>
+<center><p style="color: #FFFFFF">  telefono: 3044873927     </p> </center>
+<center><p style="color: #FFFFFF">  WhatsApp : +57 3044873927     </p> </center>
+<center><p style="color: #FFFFFF">  trabajo para la unad diseño de sitios web    </p> </center>
+<center><p style="color: #FFFFFF">  profesor JOSUE IGNACIO OCHOA   </p> </center>
+</div>
+
+
+
+  <script src="js/index.js"></script>
+
+</body>
+
+</html>
